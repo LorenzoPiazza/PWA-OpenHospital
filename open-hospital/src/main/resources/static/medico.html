@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="author" content="Lorenzo Piazza">
+    <title>OpenHospital PWA | Medico</title>
+    <link rel="stylesheet" href="./css/style-medico.css">
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./js/parser-json.js"></script>
+    <script type="text/javascript" src="./js/showAndHide.js"></script>
+    <script type="text/javascript" src="./js/medicoAjax.js"></script>
+    <script type="text/javascript" src="./js/utils.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+            <a href="./index.html"> <img src="./img/logo_OH_small.png"></a>
+            <h1>OpenHospital-PWA</h1>
+            <h2 id="welcome"></h2>
+            <script>$('#welcome').html("Benvenuto Medico con ID="+getCookie("id")); </script>
+        </div>
+        <div id="logout">
+          <img id="img_profile" src="./img/medico3.png"> <br>
+          <input class="loginButton" type="submit" value="Logout" onclick="logout()">
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="maincontent">
+        <h2>Cosa desideri fare?</h2>
+        <div class="buttonAzioni">
+          <input id="getPazienti_button" type="button" value="Visualizza i tuoi pazienti" onclick="mostra(this.id); getPazienti()">
+          <input id="getDocumenti_button" type="button" value="Visualizza i documenti di un paziente" onclick="mostra(this.id)">
+          <input id="addPaziente_button" type="button" value="Aggiungi Paziente" onclick="mostra(this.id)">
+          <input id="addDocumento_button" type="button" value="Aggiungi Documento" onclick="mostra(this.id)">
+        </div>
+
+        <div id="getPazienti" style="display:none">
+			<table id="tabellaPazienti">
+			
+			</table>
+        </div>
+
+        <div id="getDocumentiPaziente" style="display:none">
+          <fieldset>
+            <legend>Visualizza i documenti di un paziente</legend>
+            <form id="formPaziente">
+              Inserisci l'id del paziente di cui vuoi visualizzare i documenti:<br><input type="text" name="id_paziente_doc"> <br>
+              <input class="addButton" type="button" value="Visualizza" onclick="getDocumentiPaziente()">
+            </form>
+          </fieldset>
+        </div>
+        
+        <div id="getDocumentiPazienteResult">
+        	<table id="tabellaDocumenti">
+			
+			</table>
+        </div>
+
+        <div id="addPaziente" style="display:none">
+          <fieldset>
+            <legend>Aggiungi un nuovo paziente</legend>
+            <form id="formPaziente">
+              Nome:<br><input type="text" name="nome"> <br>
+              Cognome:<br><input type="text" name="cognome"> <br>
+              Luogo di nascita:<br><input type="text" name="luogo_nascita"> <br>
+              Data di nascita:<br><input type="date" name="data_nascita"> <br>
+              Residenza:<br><input type="text" name="residenza"> <br>
+              Codice Fiscale:<br><input type="text" name="codiceFiscale"> <br>
+              E-mail:<br><input type="email" name="email"> <br>
+              Telefono:<br><input type="text" name="telefono"> <br>
+              <input class="addButton" type="button" value="Aggiungi" onclick="addPaziente()">
+            </form>
+          </fieldset>
+        </div>
+        
+        <div id="addPazienteResult">
+        
+        </div>
+
+        <div id="addDocumento" style="display:none">
+          <fieldset>
+            <legend>Aggiungi un nuovo documento</legend>
+            <form id="formDocumento">
+              Data di emissione:<br><input type="date" name="data_emissione"> <br>
+              Descrizione:<br><textarea rows="4" cols="100" name="descrizione" form="formDocumento"> </textarea> <br>
+              Tipologia (Prescrizione, Prenotazione o Referto):<br><input type="text" name="tipologia"> <br>
+              Id Paziente:<br><input type="text" name="idPaziente"> <br>
+              <input class="addButton" type="button" value="Aggiungi" onclick="addDocumento()">
+            </form>
+          </fieldset>
+        </div>
+        <div id="addDocumentoResult">
+        
+        </div>
+
+      </section>
+    </div>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="istruzioni">
+          <img src="./img/medico3.png">
+          <h3>Sei un medico?</h3>
+          <p>Accedi come medico per poter avere accesso alla lista dei tuoi pazienti, delle loro cartelle cliniche o per aggiungere nuovi pazienti.</p>
+        </div>
+        <div class="istruzioni">
+          <img src="./img/paziente.jpg">
+          <h3>Sei un paziente?</h3>
+          <p>Accedi come paziente gestire i tuoi documenti sanitari, prenotazioni di visite e prescrizioni di medicinali.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p> Author: Lorenzo Piazza</p>
+    </footer>
+  </body>
+</html>

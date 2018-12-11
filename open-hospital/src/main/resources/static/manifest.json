@@ -1,0 +1,21 @@
+{
+  "short_name": "OH",
+  "name": "Open Hospital",
+  "icons": [
+    {
+      "src": "./img/logoOH192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./img/logoOH512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#35424a",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#ffffff"
+}

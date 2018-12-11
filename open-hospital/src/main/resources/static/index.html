@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Lorenzo Piazza">
+    <title>OpenHospital PWA | Welcome</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+    <script type="text/javascript" src="./registerSw.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+            <a href="./index.html"> <img src="./img/logo_OH_small.png"></a>
+            <h1>OpenHospital-PWA</h1>
+        </div>
+      <section id="login">
+          <form id="roleForm">
+            <div class="loginContainer">
+              <label for="id">Id</label>
+              <input id="id" type="text"> <br>
+            </div>
+            <div class="loginContainer">
+              <label for="passwd">Password</label>
+              <input id="passwd" type="password"> <br>
+            </div>
+            <div class="roleContainer">
+              <input id="roleM" type="radio" name="role" value="medico">
+              <label for="roleM">Sono un medico</label> <br>
+              <input id="roleP" type="radio" name="role" value="paziente">
+              <label for="roleP">Sono un paziente</label>
+            </div>
+              <input class="loginButton" type="button" value="Accedi" onclick="loginRedirector(document.forms.roleForm.role.value)">
+          </form>
+     </section>
+   	</div>
+    
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <h1>OpenHospital<br>PWA</h1>
+        <h3>Un aiuto concreto per il Mondo</h3>
+      </div>
+    </section>
+
+    <section id="boxes">
+      <div class="container">
+        <div class="istruzioni">
+          <img src="./img/medico3.png">
+          <h3>Sei un medico?</h3>
+          <p>Accedi come medico per poter avere accesso alla lista dei tuoi pazienti, delle loro cartelle cliniche o per aggiungere nuovi pazienti.</p>
+        </div>
+        <div class="istruzioni">
+          <img src="./img/paziente.jpg">
+          <h3>Sei un paziente?</h3>
+          <p>Accedi come paziente gestire i tuoi documenti sanitari, prenotazioni di visite e prescrizioni di medicinali.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p> Author: Lorenzo Piazza</p>
+    </footer>
+  </body>
+</html>
