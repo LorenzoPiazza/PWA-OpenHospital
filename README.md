@@ -1,6 +1,6 @@
 # PWA-OpenHospital
-In questa repository è presente il mio progetto di Tesi.  
-Si tratta di una PWA realtiva al software Open Hospital di Informatici senza Frontiere.    
+In questa repository è presente il mio progetto di Tesi Triennale in Ingegneria Informatica.  
+Si tratta di una PWA relativa al software Open Hospital di Informatici senza Frontiere.    
 
 Il progetto è così strutturato:    
 
